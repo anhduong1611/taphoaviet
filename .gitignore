@@ -1,0 +1,43 @@
+# Node modules
+node_modules/
+package-lock.json
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+tmp/
+temp/
+
+# Coverage reports
+coverage/
+*.lcov
+
+# WebdriverIO config files
+wdio.conf.js
+wdio.conf.ts
+
+# All local test reports
+reports/
+output/
+
+# Build files
+build/
+dist/
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.production
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
