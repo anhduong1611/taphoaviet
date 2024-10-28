@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": ".//name[normalize-space(text()) = \"\"customer[email]\"\"] | .//name[not(.//name[normalize-space(text()) = \"\"customer[email]\"\"]) and normalize-space() = \"\"customer[email]\"\"]"
+}

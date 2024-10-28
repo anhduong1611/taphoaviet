@@ -1,40 +1,26 @@
 import { $ } from '@wdio/globals'
 import Page from './page.js';
+import Account from './account.page.js';
+import { User } from '../model/user.js';
+import elementPage from './element.page.js';
 
-/**
- * sub page containing specific selectors and methods for a specific page
- */
-class LoginPage extends Page {
-    /**
-     * define selectors using getter methods
-     */
-    public get inputUsername () {
-        return $('#username');
-    }
-
-    public get inputPassword () {
-        return $('#password');
-    }
-
-    public get btnSubmit () {
-        return $('button[type="submit"]');
-    }
-
-    /**
-     * a method to encapsule automation code to interact with the page
-     * e.g. to login using username and password
-     */
-    public async login (username: string, password: string) {
-        await this.inputUsername.setValue(username);
-        await this.inputPassword.setValue(password);
-        await this.btnSubmit.click();
-    }
-
-    /**
-     * overwrite specific options to adapt it to page object
-     */
+class LoginPage extends Account {
     public open () {
-        return super.open('login');
+        return super.open('account/login');
+    }
+    get registerBtn() {
+        return $('[type="submit"][value="Đăng nhập"]')
+    }
+    async login(user:User){
+        await this.emailEdt.setValue(user.email);
+        await this.passwordEdt.setValue(user.password);
+        await this.registerBtn.click();
+    }
+    async checkErrorMessage(mess:string){
+        await elementPage.checkErrorMessage(mess);
+    }
+    async checkInputAEmpty() {
+        await elementPage.checkInputEmpty(this.emailEdt);
     }
 }
 
