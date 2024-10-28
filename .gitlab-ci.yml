@@ -1,0 +1,19 @@
+image: node:14
+
+stages:
+  - test
+
+variables:
+  NODE_ENV: test
+  # Bạn có thể thêm các biến môi trường khác tại đây
+
+before_script:
+  - npm install
+  - npm install --save-dev @wdio/cli
+
+test:
+  stage: test
+  script:
+    - npx wdio wdio.conf.js
+  only:
+    - branches
