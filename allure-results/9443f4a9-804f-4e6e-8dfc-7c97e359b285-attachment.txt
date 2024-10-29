@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": ".//*[@aria-labelledby=(//*[normalize-space(text()) = \"Thương hiệu\"]/@id)] | .//*[@aria-describedby=(//*[normalize-space(text()) = \"Thương hiệu\"]/@id)] | .//*[@aria-label = \"Thương hiệu\"] | .//input[@id = (//label[normalize-space() = \"Thương hiệu\"]/@for)] | .//textarea[@id = (//label[normalize-space() = \"Thương hiệu\"]/@for)] | .//input[ancestor::label[normalize-space(text()) = \"Thương hiệu\"]] | .//textarea[ancestor::label[normalize-space(text()) = \"Thương hiệu\"]] | .//input[@placeholder=\"Thương hiệu\"] | .//textarea[@placeholder=\"Thương hiệu\"] | .//input[@aria-placeholder=\"Thương hiệu\"] | .//textarea[@aria-placeholder=\"Thương hiệu\"] | .//*[not(self::label)][@title=\"Thương hiệu\"] | .//img[@alt=\"Thương hiệu\"] | .//*[not(self::label)][normalize-space(text()) = \"Thương hiệu\"]"
-}

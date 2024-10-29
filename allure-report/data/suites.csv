@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"Search with no  content. Fails if any error happens","946","Search with no  content","","Tue Oct 29 13:12:05 ICT 2024","passed","Tue Oct 29 13:12:06 ICT 2024","","Search","",""
+"Search with html cpde content. Fails if any error happens","827","Search with html cpde content","","Tue Oct 29 13:12:35 ICT 2024","passed","Tue Oct 29 13:12:36 ICT 2024","","Search","",""
+"Search with 2 VN letter no in data. Fails if any error happens","13503","Search with 2 VN letter no in data","","Tue Oct 29 13:12:22 ICT 2024","failed","Tue Oct 29 13:12:35 ICT 2024","","Search","",""
+"Search with content not in database. Fails if display items","13026","Search with  content not in data","","Tue Oct 29 13:11:52 ICT 2024","broken","Tue Oct 29 13:12:05 ICT 2024","","Search","",""
+"Search with a content in database. Fails if display items not releated with content or empty","9338","Search with simple content","","Tue Oct 29 13:11:40 ICT 2024","passed","Tue Oct 29 13:11:49 ICT 2024","","Search","",""
+"Search with related to content in database. Fails if display items not releated with content or empty","3040","Search with related to content","","Tue Oct 29 13:11:49 ICT 2024","failed","Tue Oct 29 13:11:52 ICT 2024","","Search","",""
+"Search with special characters. Fails if any error happens","15809","Search with special characters","","Tue Oct 29 13:12:06 ICT 2024","broken","Tue Oct 29 13:12:22 ICT 2024","","Search","",""

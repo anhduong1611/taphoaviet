@@ -1,11 +1,12 @@
 import filterandsortPage from "../pageobjects/filterandsort.page"
-
+import allureReporter from '@wdio/allure-reporter'
 describe('Filter and sort',async ()=>{
     beforeEach(async()=>{
         filterandsortPage.open();
     })
 
     it('Filter with a content in Thương hiệu ',async()=>{
+        allureReporter.addFeature('Filter and sort');
         await filterandsortPage.fileterABrand();
         await filterandsortPage.checkAllResults(['DH Food'])
     })

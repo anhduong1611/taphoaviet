@@ -1,5 +1,6 @@
 import Page from "./page";
 import myValidation from "../untils/check.util";
+import allureReporter from '@wdio/allure-reporter'
 class Search extends Page{ 
     public open() {
         return super.open('');
@@ -14,16 +15,20 @@ class Search extends Page{
         return $('.subtext');
     }
     async search(content :string){
+        allureReporter.addArgument('content',content);
+        allureReporter.addStep('Input content to input search')
         await this.searchEdt.setValue(content);
         await this.searchBtn.click();
     }
     async checkMessNotFoundItem(content:string){
+        allureReporter.addStep('Check Not Found Item Message')
         const expected = `Không tìm thấy "${content}". Vui lòng kiểm tra chính tả, sử dụng các từ tổng quát hơn và thử lại!`;
         await expect(this.messageNotFountTxt).toHaveText(expected);
     }
     async checkAlertNotify(content: string) {
         await this.searchEdt.setValue(content);
         const alertText = await browser.getAlertText();
+        allureReporter.addStep('Check Alert with danger message')
         await expect(alertText).toEqual('Từ khóa của bạn có chứa mã độc hại ! Vui lòng nhập lại key word khác')
     }
     
@@ -37,6 +42,7 @@ class Search extends Page{
     } 
 
     async checkAllResults(content: string) {
+        allureReporter.addStep('Check all displayed items')
         let hasNextPage = true;
         while (hasNextPage) {
             const products =  $('.product-item');
