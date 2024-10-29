@@ -33,7 +33,8 @@ describe('Search', async () => {
     })
     it('Search with special characters', async () => {
         allureReporter.addDescription('Search with special characters. Fails if any error happens', 'text')
-        await searchPage.search('@');
+        await searchPage.search('');
+        await browser.keys('@');
         await searchPage.checkMessNotFoundItem('@');
     })
     it('Search with 2 VN letter no in data', async () => {
