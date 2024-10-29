@@ -14,6 +14,6 @@
     "allure-commandline": "^2.31.0"
   },
   "scripts": {
-    "test:local": "wdio run ./wdio.conf.js --spec ./test/specs/search.spec.ts" 
+    "test:local": "wdio run wdio.conf.js" 
   }
 }
