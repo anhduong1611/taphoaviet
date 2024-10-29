@@ -6,7 +6,7 @@ describe('Login',async()=>{
     const accountPage = new Account();
     beforeEach(async ()=>{
         loginPage.open();
-        await browser.$('#ezca-btn-zalo').waitForDisplayed();
+        await browser.pause(3000)
     })
 
     it('Login success with account',async ()=>{

@@ -6,8 +6,8 @@ import registerPage from "../pageobjects/register.page"
 describe('Register ',async()=>{
     const accountPage = new Account();
     beforeEach(async()=>{
-        registerPage.open();
-        
+        registerPage.open();    
+        await browser.pause(3000);
     })
 
     it('Register user success', async ()=>{

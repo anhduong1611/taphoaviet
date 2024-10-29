@@ -24,6 +24,7 @@ class FilterAndSort extends Page {
         await this.filterBtn.click();
         await this.openBrandBtn.click();
         for await (const e of elements) {
+            await e.isDisplayed();
             await e.click();
         }
     }
