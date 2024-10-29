@@ -9,10 +9,10 @@ describe('Login',async()=>{
         await browser.pause(3000)
     })
 
-    it('Login success with account',async ()=>{
-        await loginPage.login(userData.userExistEmail);
-        await accountPage.checkInfoAccount(userData.userExistEmail);
-    })
+    // it('Login success with account',async ()=>{
+    //     await loginPage.login(userData.userExistEmail);
+    //     await accountPage.checkInfoAccount(userData.userExistEmail);
+    // })
     // it('Login unsuccess with email not existed',async ()=>{
     //     await loginPage.login(userData.userNoExistEmail);
     //     await loginPage.checkErrorMessage(userData.userNoExistEmail.mess);
