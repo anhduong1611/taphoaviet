@@ -285,7 +285,7 @@ export const config: WebdriverIO.Config = {
      * @param {<Object>} results object containing test results
      */
     onComplete: function() {
-        const reportError = new Error('Could not generate Allure report')
+        // const reportError = new Error('Could not generate Allure report')
         const generation = allure(['generate', 'allure-results', '--clean'])
         
         return new Promise<void>((resolve, reject) => {
