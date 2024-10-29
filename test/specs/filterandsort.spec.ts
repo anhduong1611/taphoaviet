@@ -3,6 +3,7 @@ import allureReporter from '@wdio/allure-reporter'
 describe('Filter and sort',async ()=>{
     beforeEach(async()=>{
         filterandsortPage.open();
+        await browser.pause(3000)
     })
 
     it('Filter with a content in Thương hiệu ',async()=>{
