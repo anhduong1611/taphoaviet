@@ -21,7 +21,6 @@ class FilterAndSort extends Page {
     }
 
     async clickChooseFilter(elements: ChainablePromiseArray) {
-        await this.filterBtn.waitForDisplayed();
         await this.filterBtn.click();
         await this.openBrandBtn.click();
         for await (const e of elements) {
