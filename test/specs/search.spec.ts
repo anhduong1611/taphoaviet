@@ -6,6 +6,7 @@ describe('Search', async () => {
     beforeEach(async () => {
         allureReporter.addOwner('DuongHA');
         searchPage.open();
+        await browser.pause(3000)
     })
 
     it('Search with simple content', async () => {
