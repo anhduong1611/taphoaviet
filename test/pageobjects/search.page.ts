@@ -6,7 +6,7 @@ class Search extends Page{
         return super.open('');
     }
     get searchEdt(){
-        return $('#inputSearchAuto-3');
+        return $('.input-search');
     }
     get searchBtn(){
         return $('#btnSearchAuto-3');
@@ -17,7 +17,7 @@ class Search extends Page{
     async search(content :string){
         allureReporter.addArgument('content',content);
         allureReporter.addStep('Input content to input search')
-        await this.searchEdt.waitForDisplayed();
+        await this.searchEdt.waitForDisplayed()
         await this.searchEdt.setValue(content);
         await this.searchBtn.click();
     }
