@@ -14,10 +14,6 @@ temp/
 coverage/
 *.lcov
 
-# WebdriverIO config files
-wdio.conf.js
-wdio.conf.ts
-
 # All local test reports
 reports/
 output/
