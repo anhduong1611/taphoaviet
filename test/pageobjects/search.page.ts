@@ -6,7 +6,7 @@ class Search extends Page{
         return super.open('');
     }
     get searchEdt(){
-        return $('#inputSearchAuto-3');
+        return $('.input-search');
     }
     get searchBtn(){
         return $('#btnSearchAuto-3');

@@ -38,7 +38,7 @@ export const userData = {
         lastName:'Hồ',
         firstName:'Dương',
         email:'hothianhduong2210246@gmail.com',
-        password:'1',
+        password:'a',
         mess:'Mật khẩu quá ngắn (tối thiểu 5 ký tự).',
         messLogin:'Thông tin đăng nhập không hợp lệ.'
     },
