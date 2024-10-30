@@ -17,4 +17,4 @@ jobs:
           if: ${{ always() }}
           with:
             name: allureReport
-            path: ./allure-report
+            path: ./allure-report 

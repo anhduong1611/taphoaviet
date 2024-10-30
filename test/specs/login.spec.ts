@@ -1,38 +1,38 @@
 import { userData } from "../model/data";
 import Account from "../pageobjects/account.page";
 import loginPage from "../pageobjects/login.page"
-
+import allureReporter from '@wdio/allure-reporter'
 describe('Login',async()=>{
     const accountPage = new Account();
     beforeEach(async ()=>{
         loginPage.open();
-        await browser.pause(3000)
+        await $('#ezca-btn-zalo').waitForDisplayed();
     })
 
-    it('Login success with account',async ()=>{
+    it('should login success with existed account',async ()=>{
         await loginPage.login(userData.userExistEmail);
-        await accountPage.checkInfoAccount(userData.userExistEmail);
+        await accountPage.verifyInfoAccount(userData.userExistEmail);
     })
-    it('Login unsuccess with email not existed',async ()=>{
+    it('should login unsuccess with email not existed',async ()=>{
         await loginPage.login(userData.userNoExistEmail);
-        await loginPage.checkErrorMessage(userData.userNoExistEmail.mess);
+        await loginPage.verifyErrorMessageMatches(userData.userNoExistEmail.mess);
     })
 
-    it('Login unsuccess with all empty field',async()=>{
+    it('should login unsuccess with all empty field',async()=>{
         await loginPage.login(userData.userAllEmptyField);
-        await loginPage.checkInputAEmpty();
+        await loginPage.verifyInputFieldEmpty();
     })
-    it('Login unsuccess with the invalid pass format',async()=>{
+    it('should login unsuccess with the invalid pass format',async()=>{
         await loginPage.login(userData.userShortPassword);
-        await loginPage.checkErrorMessage(userData.userShortPassword.messLogin);
+        await loginPage.verifyErrorMessageMatches(userData.userShortPassword.messLogin);
     })
-    it('Login unsuccess with the invalid email format',async()=>{
+    it('should login unsuccess with the invalid email format',async()=>{
         await loginPage.login(userData.userInvalidEmailFormat);
-        await loginPage.checkErrorMessage(userData.userInvalidEmailFormat.mess);
+        await loginPage.verifyErrorMessageMatches(userData.userInvalidEmailFormat.mess);
     })
-    it('Login unsuccess with the correct email but with the wrong password',async()=>{
+    it('should login unsuccess with the correct email but with the wrong password',async()=>{
         await loginPage.login(userData.userExistEmailButCorrectPass);
-        await loginPage.checkErrorMessage(userData.userExistEmailButCorrectPass.mess);
+        await loginPage.verifyErrorMessageMatches(userData.userExistEmailButCorrectPass.mess);
     })
 
 })

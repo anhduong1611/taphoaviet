@@ -21,12 +21,12 @@ class Search extends Page{
         await this.searchEdt.setValue(content);
         await this.searchBtn.click();
     }
-    async checkMessNotFoundItem(content:string){
+    async verifyErrorTextMatchesContent(content:string){
         allureReporter.addStep('Check Not Found Item Message')
         const expected = `Không tìm thấy "${content}". Vui lòng kiểm tra chính tả, sử dụng các từ tổng quát hơn và thử lại!`;
         await expect(this.messageNotFountTxt).toHaveText(expected);
     }
-    async checkAlertNotify(content: string) {
+    async validateAlertTextMatchesContent(content: string) {
         await this.searchEdt.setValue(content);
         const alertText = await browser.getAlertText();
         allureReporter.addStep('Check Alert with danger message')
@@ -42,7 +42,7 @@ class Search extends Page{
         }
     } 
 
-    async checkAllResults(content: string) {
+    async verifyAllItemsMatchContent(content: string) {
         allureReporter.addStep('Check all displayed items')
         let hasNextPage = true;
         while (hasNextPage) {

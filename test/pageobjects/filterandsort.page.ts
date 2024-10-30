@@ -51,7 +51,7 @@ class FilterAndSort extends Page {
         }
     } 
 
-    async checkAllResults(expectedContents: string[]) {//
+    async verifyAllItemsMatches(expectedContents: string[]) {//
         let hasNextPage = true;
         while (hasNextPage) {
             const products =  $('.product-item');

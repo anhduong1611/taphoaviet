@@ -3,16 +3,15 @@ import allureReporter from '@wdio/allure-reporter'
 describe('Filter and sort',async ()=>{
     beforeEach(async()=>{
         filterandsortPage.open();
-        await browser.pause(3000)
+        await $('#ezca-btn-zalo').waitForDisplayed();
     })
 
-    it('Filter with a content in Thương hiệu ',async()=>{
-        allureReporter.addFeature('Filter and sort');
+    it('should display items when filtering with a content in Thương hiệu ',async()=>{
         await filterandsortPage.fileterABrand();
-        await filterandsortPage.checkAllResults(['DH Food'])
+        await filterandsortPage.verifyAllItemsMatches(['DH Food'])
     })
-    it('Filter with many content in Thương hiệu ',async()=>{
+    it('should display items when filtering with many content in Thương hiệu ',async()=>{
         await filterandsortPage.filter3Brand();
-        await filterandsortPage.checkAllResults(['DH Food','Vinamilk','X-men'])
+        await filterandsortPage.verifyAllItemsMatches(['DH Food','Vinamilk','X-men'])
     })
 })
