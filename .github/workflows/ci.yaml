@@ -15,7 +15,7 @@ jobs:
           run: npm run test:local
         - name: Archive Test Results
           if: ${{ always() }}
-          uses: actions/upload-artifact@v1
+          uses: actions/upload-artifact@v3
           with:
            name: test-results
            path: app/build
