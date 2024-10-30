@@ -136,7 +136,7 @@ export const config: WebdriverIO.Config = {
             disableMochawesome: true,
         }]],
 
-    // Options to be passed to Mocha.
+    // Options to be passed to Mocha. 
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
